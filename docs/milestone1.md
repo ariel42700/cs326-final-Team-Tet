@@ -1,3 +1,3 @@
-Here's the page:
+Here's the specific job description page:
 
-![Page](logo.png)
+![Page](Job_Desc_HTML_SC.png)
