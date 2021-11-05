@@ -25,3 +25,7 @@ if (existsSync("database.json")) {
         hoursPerWeek: 0
     };
 }
+
+createServer(async (req, res) => {
+    //have fun
+}).listen(8080);
