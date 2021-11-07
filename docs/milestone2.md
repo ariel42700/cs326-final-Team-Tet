@@ -1,0 +1,6 @@
+For this milestone, we had some difficulties in terms of a team member's computer having issues as well as other issues that I will not mention for personal reasons. In the repo, we have started some code for the server.js where we have started to implement the dummy server. There is also the API that has been completed but some issues on client-side. In terms of testing the dummy server, we were not able to install express as Windows was giving us issues, and we were not able to get the help needed to get the issue fixed. Therefore, we were not able to provide the screenshots or the Heroku Application URL. We are however going to meet this week and get the express issue fixed and consistently push to git the changes we have as soon as we are able to fix these issues.
+
+Division of Labor:
+Ariel -- API and Front-End Implementation -- had some issues with computer, wasn't able to finish everything
+Anirudh -- Backend Dummy Server and Faker Data -- worked on figuring out the faker data and help witht the backend dummy server
+Anjali -- Backend Dummy Server and and Heroku and markdown-- issues with express and curl statements, so wasn't able to test or get the Heroku URL but will follow up this week and push changes as soon as able 
