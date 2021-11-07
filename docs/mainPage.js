@@ -40,3 +40,5 @@ let tags = document.getElementsByTagName('a');
 for (let i = 0; i < tags.length ; i++) {
     Anchors[i].addEventListener("click", getJobPage);
 }
+
+document.getElementById('butt').addEventListener("click", window.location.replace(database.jobAppURL));
