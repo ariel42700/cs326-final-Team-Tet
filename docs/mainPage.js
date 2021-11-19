@@ -18,27 +18,26 @@ function getChecklistItem(id) {
     }
     return value;   
 }
-function getSearch() {
-    const response = await fetch('/search', {
-        method: 'POST',
-        database: JSON.stringify({
-            workStudy: getChecklistItem('checklist1'),
-            locationPreference: getChecklistItem('checklist2'),
-            jobType: getDropdown('dropdown')
-        })
-    })
-    window.location.replace("PopupSearch.html");
-}
-function getJobPage() {
-    const response = await fetch('/jobPage')
-    window.location.replace("job_page.html");
-}
-document.getElementById('search').addEventListener('click', getSearch);
+// function getSearch() {
+//     const response = await fetch('/search', {
+//         method: 'POST',
+//         database: JSON.stringify({
+//             workStudy: getChecklistItem('checklist1'),
+//             locationPreference: getChecklistItem('checklist2'),
+//             jobType: getDropdown('dropdown')
+//         })
+//     })
+//     window.location.replace("PopupSearch.html");
+// }
+// function getJobPage() {
+//     const response = await fetch('/jobPage')
+//     window.location.replace("job_page.html");
+// }
+// document.getElementById('search').addEventListener('click', getSearch);
 
-let tags = document.getElementsByTagName('a');
+// let tags = document.getElementsByTagName('a');
 
-for (let i = 0; i < tags.length ; i++) {
-    Anchors[i].addEventListener("click", getJobPage);
-}
-
-document.getElementById('butt').addEventListener("click", window.location.replace(database.jobAppURL));
+// for (let i = 0; i < tags.length ; i++) {
+//     Anchors[i].addEventListener("click", getJobPage);
+// }
+document.getElementById('search').addEventListener("click", window.location.href = "PopupSearch.html");
