@@ -1,4 +1,4 @@
-import {database} from './jobApi.js';
+//import {database} from './jobApi.js';
 function getDropdown(id) {
     let select = document.getElementById(id);
     let value = select.options[select.selectedIndex].value;
@@ -40,4 +40,7 @@ function getChecklistItem(id) {
 // for (let i = 0; i < tags.length ; i++) {
 //     Anchors[i].addEventListener("click", getJobPage);
 // }
-document.getElementById('search').addEventListener("click", window.location.href = "PopupSearch.html");
+document.getElementById('search').addEventListener("click", () => {
+    window.location.href = "PopupSearch.html"
+});
+
