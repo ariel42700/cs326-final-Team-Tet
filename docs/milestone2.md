@@ -24,6 +24,8 @@ API Endpoints:
 Again, we are still getting the hang of using endpoints and testing in the server, so we have not been able to fully test these yet, but this is our plan and this is what we will do. We do not have screenshots of this working currently, but we do have screenshots of the pages which will implement the endpoints. This is explained below:
 
 
+API Front-End Implementation:
+
 ![Page](MainSearchPage_SC.PNG) 
 --> This page is where we will be implementing the /getJobList endpoint. We will do this by creating a query based on the inputs of the form that is on the page and then we will go through the database table which contains all of the jobs and the information related and we will filter out the jobs that match the user's criteria needed that is present in the query. This page is also acting as the home page where we will have a button in the top right hand corner that will allow a user to login. A popup will show up once login is clicked and /getUser and /validate Password will both be called once a user tries to login. This has not been implemented fully, yet but we will have it done soon. If the user does not exist in the database, a new popup will come up saying that it is not a registered login/password and they will have the option to retry or to register in which /getUser will be used but to insert the user and password and then they will be redirected, if success, to the login page again where they have to use their new credentials. 
 
@@ -32,3 +34,8 @@ Again, we are still getting the hang of using endpoints and testing in the serve
 
 ![Page](Job_Desc_HTML_SC.png)
 --> This page is where the result of /getJobDes will show up. After the user clicks on an href link that shows up in the jobListTable, the specific details of the job will be shown on this page. The apply button, when clicked, will call another popup page which will be done soon, which will contain an html form with all of the information that is in the user's profile that is the result of the endpoint /getProfile. If the user has not filled out anything in their profile yet, they will be able to go to the top right hand corner of the page and click on their user icon and click on profile (all which will be implemented soon), and there they will be allowed to set all the information that is necessary in their profile, including uploading their resume which will be saved in the database through /setProfile for the specific user. If the profile is already complete of the user, then when the apply button is clicked, there will be a form in which contains all of the information from their profile as well as their resume if uploaded and this will be sent to the employer's contact email through an application template. If there is anything the user would like to add, they will be able to edit the email and they can manually send it once satisfied with what is written. The email template will be implemented, but is not shown currently.
+
+Heroku Deployment:
+
+https://student-job-board-final.herokuapp.com/ 
+-->This is our link that is deploying our git code to our heroku app. Currently, there are some errors, but this will be fixed soon.
