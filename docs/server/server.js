@@ -2,15 +2,57 @@
 import {createServer} from 'http';
 import {parse} from 'url';
 import {join} from 'path';
+const cool = require('cool-ascii-faces');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 const express = require('express');
 const faker = require('faker');
 const app = express();
 ​
 app.use(express.json()); // lets you handle JSON input
-​
-const port = 5500;
-​
-const datastore = {};
+
+//the below code is to connect to the database
+const { Pool } = require('pg');
+const pool = new Pool({
+  host: "ec2-52-86-193-24.compute-1.amazonaws.com",
+  database: "ddq90q3d676jb5",
+  user: "ahczkeuevsnijf",
+  port: 5432,
+  password:"2d1d200a78b1ff68dce11c508fd7bf646a8068dcaec98e4a1ef44dd3a6cfc45d"
+});
+
+// Assuming your secrets.json contains the following:
+// {“password”: “mysupersecretpassword”}
+//the below codee is to access passwords
+let secrets;
+let password;
+if (!process.env.PASSWORD) {
+secrets = require('secrets.json');
+password = secrets.password;
+} else {
+	password = process.env.PASSWORD;
+}
+
+
+//this function will take the results from the mainsearchpage and then create a query string that will be returned and be accessed by the database to fiter the results of the database
+async function getQuery(){
+  let queryStr = '';
+  return queryStr;
+}
+
+//the below code is awaiting a connection from the database and sending a query​ --> this is a template
+app.get('/db', async (req, res) => {
+  try {
+    const client = await pool.connect();
+    const result = await client.query(getQuery());
+    const results = { 'results': (result) ? result.rows : null};
+    res.render('pages/db', results );
+    client.release();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+})
 
 async function getLstJob(){
   let jobTitle = faker.name.jobTitle();
@@ -44,7 +86,7 @@ createServer(async (req, res) => {
           });
       });
   } 
-}).listen(port);
+}).listen(PORT);
 
 ​
 
@@ -60,10 +102,7 @@ app.get('/getListJobs', (req, res) => {//this is the page that results in all th
     workingPeriod = faker.date.between('2022-02-01','2022-05-20');
   }*/
   
-    // TODO: PARSE OUT KEY AND VALUE FROM *QUERY* INTO k AND v
-  datastore[k] = v;
-  console.log(`Set ${k} to ${v}`);
-  res.send('Set.');
+  res.send(getLstJob());
 });
 ​
 app.get('/getJobDesc', (req, res) => {
@@ -82,9 +121,6 @@ app.get('/getJobDesc', (req, res) => {
 //   curl -d '{ "key" : "x", "value" : "12" }' -H "Content-Type: application/json" http://localhost:3000/pcreate
 app.post('/postListJobs', (req, res) => {
   // TODO: PARSE OUT KEY AND VALUE FROM req.body INTO k and v
-
-  datastore[k] = v;
-  console.log(`Set ${k} to ${v}, body = ${JSON.stringify(req.body)}`);
   res.send('Set.');
 });
 ​
@@ -92,6 +128,6 @@ app.get('*', (req, res) => {
   res.send('NO FOOL, BAD COMMAND');
 });
 ​
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
 });
