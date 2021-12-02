@@ -39,7 +39,7 @@ async function getQuery(){
   let queryStr = '';
   return queryStr;
 }
-//random
+//test change
 
 //the below code is awaiting a connection from the database and sending a query​ --> this is a template
 app.get('/db', async (req, res) => {
