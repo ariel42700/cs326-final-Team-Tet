@@ -23,7 +23,7 @@ const pool = new Pool({
 
 // Assuming your secrets.json contains the following:
 // {“password”: “mysupersecretpassword”}
-//the below codee is to access passwords
+//the below code is to access passwords
 let secrets;
 let password;
 if (!process.env.PASSWORD) {
@@ -39,6 +39,7 @@ async function getQuery(){
   let queryStr = '';
   return queryStr;
 }
+//random
 
 //the below code is awaiting a connection from the database and sending a query​ --> this is a template
 app.get('/db', async (req, res) => {
