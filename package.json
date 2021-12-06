@@ -1,27 +1,26 @@
 {
-  "name": "cs326-final-team-tet",
+  "name": "cs-326-team-tet-final",
   "version": "1.0.0",
-  "description": "A Remaster of the UMass Amherst Job Board",
+  "description": "",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ariel42700/cs326-final-Team-Tet.git"
+    "url": "git+https://github.com/aarigela9/CS-326-team-tet-final.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ariel42700/cs326-final-Team-Tet/issues"
+    "url": "https://github.com/aarigela9/CS-326-team-tet-final/issues"
   },
-  "homepage": "https://github.com/ariel42700/cs326-final-Team-Tet#readme",
+  "homepage": "https://github.com/aarigela9/CS-326-team-tet-final#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "pg-promise": "^10.11.1"
-  },
-  "type": "module"
+    "pg": "^8.7.1",
+    "promise": "^8.1.0"
+  }
 }
