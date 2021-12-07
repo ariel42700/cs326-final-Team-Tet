@@ -1,10 +1,11 @@
 {
   "name": "cs-326-team-tet-final",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Remaster of the UMass Amherst Job Board",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,9 @@
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "promise": "^8.1.0"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {}
 }
