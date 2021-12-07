@@ -20,11 +20,11 @@ app.get('/popup', (req, res) => res.sendFile('client/popupsearch.html', { 'root'
 
 app.get('/jobDesc', (req, res) => res.sendFile('client/jobdescription.html', { 'root' : __dirname }));
 
-app.get('/test', (req, res) =>
+/*app.get('/test', (req, res) =>
 {
     getdb();
 }
-);
+);*/
 
 app.listen(port, () => {
     console.log(`App now listening at http://localhost:${port}`);
