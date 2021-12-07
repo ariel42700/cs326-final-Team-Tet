@@ -1,4 +1,7 @@
-/*document.getElementById('link1').addEventListener("click", () => {
-    console.log("Working");
-    //window.location.href = "jobdescription.html";
-});*/
+let jobs = document.getElementById("jobList").children;
+
+for(let job of jobs) {
+    job.firstElementChild.firstElementChild.addEventListener("click", () => {
+        job.firstElementChild.firstElementChild.href = "jobdescription.html"
+    });
+}

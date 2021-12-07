@@ -21,3 +21,4 @@ function getChecklistItem(id) {
 document.getElementById('search').addEventListener("click", () => {
     window.location.href = "popupsearch.html"
 });
+
