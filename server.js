@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5500;
+const port = process.env.PORT; //|| 5500;
 //const db = require('./database.js');
 const bodyParser = require('body-parser')
 const cors = require('cors')
