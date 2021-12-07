@@ -1,5 +1,5 @@
-const { Pool } = require('pg'); 
-const secrets = require('./secrets.json')
+/*const { Pool } = require('pg'); 
+//const secrets = require('./secrets.json')
 const env = process.env.NODE_ENV || 'development';
 let connectionString = {
     user: secrets.user,
@@ -28,4 +28,4 @@ async function getTest(){
 
 module.exports = {
     getTest
-};
+};*/

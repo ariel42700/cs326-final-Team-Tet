@@ -2,15 +2,15 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5500;
-const db = require('./database.js');
+//const db = require('./database.js');
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const { pool } = require('./database.js')
+//const { pool } = require('./database.js')
 
-async function getdb(){
+/*async function getdb(){
     console.log("Inside function.");
     db.getTest();
-}
+}*/
 
 app.use('/', express.static('./client'));
 
