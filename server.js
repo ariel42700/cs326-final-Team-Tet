@@ -23,7 +23,20 @@ app.use('/', express.static('./client'));
 
 app.get('/', (req, res) => res.sendFile('client/homepage.html', { 'root' : __dirname }));
 
-app.get('/popup', (req, res) => res.sendFile('client/popupsearch.html', { 'root' : __dirname }));
+app.get('/popup', async(req, res) => {
+    res.sendFile('client/popupsearch.html', { 'root' : __dirname });
+    pool.query(`SELECT * FROM usertable;`, (err, res) => {
+        if (err) {
+            console.log("Error - Failed to select all from Users");
+            console.log(err);
+        }
+        else{
+            let obj = JSON.stringify(res.rows[0]);
+            console.log(obj);
+            res.send(obj);
+        }
+    });
+});
 
 app.get('/jobDesc', (req, res) => res.sendFile('client/jobdescription.html', { 'root' : __dirname }));
 
