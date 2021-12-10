@@ -6,10 +6,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const pgp = require('pg-promise');
 const router = express.Router();
+const secret = require('./secrets.json');
 
 //connecting to the database
-let URI = 'postgres://ahczkeuevsnijf:2d1d200a78b1ff68dce11c508fd7bf646a8068dcaec98e4a1ef44dd3a6cfc45d@ec2-52-86-193-24.compute-1.amazonaws.com:5432/ddq90q3d676jb5';
 const {Pool} = require('pg');
+let URI = secret.URI;
 const pool = new Pool({
  connectionString: URI,
  ssl: {
@@ -43,8 +44,7 @@ app.get('/db', async (req, res) => {
         }
         else{
             let obj = JSON.stringify(res.rows[0]);
-            let studentId = obj.studentid;
-            console.log(studentId);
+            console.log(obj);
         }
     });
   })
