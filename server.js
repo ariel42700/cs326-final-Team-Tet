@@ -19,8 +19,8 @@ const pool = new Pool({
  }
 });
 
-async function insert(){
-    pool.query(`Insert into usertable(studentid, firstname, lastname, major, username) values ($1, $2, $3, $4, $5);`, [9, "Test", "Node", "Business", "aksjdhieu"], (err, res) => {
+async function insert(arr){
+    pool.query(`Insert into usertable(studentid, firstname, lastname, major, username) values ($1, $2, $3, $4, $5);`, arr, (err, res) => {
         if (err) {
             console.log("Error - Failed to Insert");
             console.log(err);
@@ -31,8 +31,8 @@ async function insert(){
     });
 }
 
-async function select(){
-    pool.query(`SELECT * FROM usertable;`, (err, res) => {
+async function select(tableName){
+    pool.query(`SELECT * FROM  $1;`, [tableName], (err, res) => {
         if (err) {
             console.log("Error - Failed to select all from Users");
             console.log(err);
@@ -45,8 +45,22 @@ async function select(){
     });
 }
 
-async function deleteR(){
-    pool.query(`delete from usertable where studentid = $1;`, [5], (err, res) => {
+async function selectSpc(tableName, col, val){
+    pool.query(`SELECT * FROM  $1 where $2 = $3;`, [tableName, col, val], (err, res) => {
+        if (err) {
+            console.log("Error - Failed to select all from Users");
+            console.log(err);
+        }
+        else{
+            let obj = res.rows;
+            //console.log(obj);
+            return obj;
+        }
+    });
+}
+
+async function deleteR(x){
+    pool.query(`delete from usertable where studentid = $1;`, [x], (err, res) => {
         if (err) {
             console.log("Error - Failed to select all from Users");
             console.log(err);
@@ -57,33 +71,59 @@ async function deleteR(){
     });
 }
 
+async function update(tableName, col, x){
+    pool.query(`update $1 where $2 = $3;`, [tableName, col, x], (err, res) => {
+        if (err) {
+            console.log("Error - Failed to select all from Users");
+            console.log(err);
+        }
+        else{
+            let obj = res.rows;
+            //console.log(obj);
+            return obj;
+        }
+    });
+}
 
 app.use('/', express.static('./client'));
 
 app.get('/', (req, res) => res.sendFile('client/login.html', { 'root' : __dirname }));
 
-app.get('/popup', async(req, res) => {
-    res.sendFile('client/popupsearch.html', { 'root' : __dirname });
+app.get('/register', (req, res) => res.sendFile('client/register.html', { 'root' : __dirname }));
+
+app.get('/login', (req, res) => res.sendFile('client/login.html', { 'root' : __dirname }));
+
+app.get('/home', (req, res) => res.sendFile('client/home.html', { 'root' : __dirname }));
+
+app.get('/jobdescription', (req, res) => res.sendFile('client/jobdescription.html', { 'root' : __dirname }));
+
+app.get('/getListJobs', async (req, res) => {
+    select(jobstable);
 });
 
-app.get('/jobDesc', (req, res) => res.sendFile('client/jobdescription.html', { 'root' : __dirname }));
-
-app.get('/db', async (req, res) => {
-    /*try {
-      const result = await connectAndRun(db => db.any("SELECT * FROM gameScores ORDER BY score DESC LIMIT 10"));
-      const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/db', results );
-      client.release();
-    } catch (err) {
-      console.error(err);
-      res.send("Error " + err);
-    }*/
-    //await insert();
-    //await deleteR();
+app.get('/getJobDes', async (req, res) => {
+    selectSpc(jobstable, jobid, 1);
 });
 
-app.get('/test', async (req, res) => {
-    console.log(await select());
+app.get('/getProfile', async (req, res) => {
+    selectSpc(usertable, studentid, 1);
+});
+
+app.get('/setProfile', async (req, res) => {
+    update(usertable, studentid, 1);
+});
+
+app.get('/register', async (req, res) => {
+    let arr = [9, "Test", "Node", "Business", "aksjdhieu"];
+    insert(arr);
+});
+
+app.get('/getUser', async (req, res) => {
+    selectSpc(usertable, studentid, 1);
+});
+
+app.get('/getPassword', async (req, res) => {
+    selectSpc(usertable, studentid, 1);
 });
 
 app.listen(process.env.PORT || 5500, () => {
