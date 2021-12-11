@@ -20,7 +20,7 @@ Anirudh Tale -- anirudhbappu
 
 User Interface: 
 1. Login -- The first page is a login page. This page is where the student will be able to enter their information, or if they do not have user credentials already, they will have the option to register.
-![Page](login.png) 
+![Page](screenshots/login.png) 
 2. If you click on the register prompt, another page will be rendered where the student will be able to enter their credentials that they want and if they are available, they will be redirected to the login, else they will have to enter different credentials.
 3. The main search page is where the student can select which options they like and based on the query that is generated from these options, a popup will show up.
 4. The Job Results popup shows all the jobs that will show a table of all the jobs generated from the search. The student will be able to click on the link in order to get whatever job they clicked's full description.
