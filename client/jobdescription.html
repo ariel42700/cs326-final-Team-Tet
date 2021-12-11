@@ -10,12 +10,17 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script type="module" src="js/mainPage.js" defer></script>
+        <script type="module" src="js/jobDesc.js" defer></script>
         <script type="module" src="server.js" defer></script>
     </head>
     <body class="containerPage">
-        <img src="images/logo.png" alt="UMass Logo" class="mt-3">
-        <div class="subheaddingx" id="test">Job Information</div>
+        <img src="images/logo.png" width="250" height="90" alt="UMass Logo" class="mt-3">
+        <div class="subheaddingx" id="test">
+          <div  class="row">
+            <div class="col-md-6">Job Information</div>
+            <button class="profileLink" type="btn-primary" data-toggle="modal" data-target="#profileModal">Profile</button>
+          </div>
+        </div>
         <div class="container">
                 <div class="row col-md-12">
                   <div class="col-md-3 jobDescContainer">
@@ -43,31 +48,47 @@
                     <h4>Contact Info</h4>
                     Contact info goes here!
                 </div>
-              <button type="button" class="btn btn-primary applyBtn" data-toggle="modal" data-target="#applyModal">
+              <button type="button" class="btn btn-primary applyBtn">
                 Apply
               </button>
         </div>
           <!-- Modal -->
-          <div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModal" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content modalDiv col-md-12">
                 <div class="modal-header">
-                  <h5 class="modal-title labels" id="exampleModalLabel">SignIn/Register</h5>
+                  <h5 class="modal-title labels" id="exampleModalLabel">Student Profile</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="closeBtn">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <button type="button" class="btn btn-secondary optionBtn col-md-3">Sign In</button>
-                        <button type="button" class="btn btn-secondary optionBtn col-md-3">Register</button>
+                    <div>
+                       <div>
+                         <h6>First Name</h1>
+                         <p>first name goes here.</p>
+                       </div>
+                       <div>
+                        <h6>Last Name</h1>
+                        <p>last name goes here.</p>
+                      </div>
+                      <div>
+                        <h6>Major</h1>
+                        <p>major goes here.</p>
+                      </div>
+                      <div>
+                        <h6>Student Status</h1>
+                        <p>student status goes here.</p>
+                      </div>
                     </div>
                 </div>
                 <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary searchBtn">Edit</button>
                   <button type="button" class="btn btn-secondary searchBtn" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
           </div>
+      </div>
     </body>
 </html>

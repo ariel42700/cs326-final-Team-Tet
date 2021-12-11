@@ -57,7 +57,7 @@ async function deleteR(){
 
 app.use('/', express.static('./client'));
 
-app.get('/', (req, res) => res.sendFile('client/homepage.html', { 'root' : __dirname }));
+app.get('/', (req, res) => res.sendFile('client/login.html', { 'root' : __dirname }));
 
 app.get('/popup', async(req, res) => {
     res.sendFile('client/popupsearch.html', { 'root' : __dirname });

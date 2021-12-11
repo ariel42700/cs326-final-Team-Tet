@@ -11,6 +11,27 @@
     border-radius: 4px;
 }
 
+.profileLink{
+    margin-left: 42%;
+    text-align: right;
+    font-size: 20px;
+    margin-top: 5px;
+    background-color: #65000b;
+    border: solid #65000b;
+    color: white;
+    text-decoration: underline;
+}
+
+.registerBtn{
+    text-align: center;
+    border: solid maroon 2px;
+    background: transparent;
+    margin-bottom: 9px;
+    border-radius: 4px;
+    margin-left: 8%;
+    width: 84%;
+}
+
 .containerPage{
     margin: 1%;
 }
@@ -126,4 +147,34 @@
 
 .contactInfoDiv{
     text-align: left;
+}
+
+.cardContainer{
+    margin-top: 3%;
+    border: solid #65000b 2px;
+    border-radius: 4px;
+    width: 50%;
+}
+
+.signin{
+    text-align: center;
+}
+
+.cardDiv{
+    border: solid maroon 1px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 57%;
+    margin-left: 24%;
+    margin-bottom: 2%;
+}
+
+.loginBtn{
+    background-color: #65000b;
+    width: 25%;
+    height: 2%;
+    border: solid white 2px;
+    border-radius: 7px;
+    margin-top: 2%;
 }
