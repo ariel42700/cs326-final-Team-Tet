@@ -1,7 +1,3 @@
-let jobs = document.getElementById("jobList").children;
-
-for(let job of jobs) {
-    job.firstElementChild.firstElementChild.addEventListener("click", () => {
-        job.firstElementChild.firstElementChild.href = "jobdescription.html"
-    });
-}
+/*document.getElementById('applyBtn').addEventListener("click", () => {
+    window.location.href = "popupsearch.html"
+});*/

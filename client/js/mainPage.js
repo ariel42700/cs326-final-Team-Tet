@@ -18,7 +18,17 @@ function getChecklistItem(id) {
     return value;   
 }
 
-document.getElementById('search').addEventListener("click", () => {
-    window.location.href = "popupsearch.html"
-});
+let jobs = document.getElementById("jobList").children;
 
+for(let job of jobs) {
+    job.firstElementChild.firstElementChild.addEventListener("click", () => {
+        job.firstElementChild.firstElementChild.href = "jobdescription.html"
+    });
+}
+
+window.addEventListener("load", () => {
+    let testDiv = document.getElementById('test');
+
+    //testDiv.innerHTML = "Change";
+    console.log("working");
+});

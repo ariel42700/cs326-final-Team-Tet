@@ -1,5 +1,5 @@
 .subheaddingx {
-    background-color: maroon;
+    background-color: #65000b;
     font-size: 30px;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -7,4 +7,123 @@
     height: 50px;
     padding: 3px; 
     color: white;
+    border: solid #65000b 1px;
+    border-radius: 4px;
+}
+
+.containerPage{
+    margin: 1%;
+}
+
+.formDiv{
+    margin-left: 4%;
+}
+
+.labels{
+    font-size: 29px;
+    text-align: center;
+    font-weight: 700;
+    font-family: fangsong;
+}
+
+.jobTypeDiv {
+    background-color: #65000b;
+    padding: 4%;
+    color: white;
+    height: 95%;
+    border: solid #65000b 5px;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-right: 1%;
+}
+
+.workStudyDiv {
+    background-color: #65000b;
+    padding: 4%;
+    color: white;
+    height: 95%;
+    border: solid #65000b 5px;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-right: 1%;
+}
+
+.locationDiv {
+    background-color: #65000b;
+    padding: 4%;
+    color: white;
+    height: 95%;
+    border: solid #65000b 5px;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-right: 1%;
+}
+
+.searchBtn{
+    background-color: #65000b;
+    width: 13%;
+    margin-top: 7%;
+    height: 2%;
+    border: solid white 2px;
+    border-radius: 7px;
+    margin-left: -6%;
+}
+
+.modalDiv{
+    background-color: #65000b;
+    color: white;
+    border: solid white 2px;
+    border-radius: 7px;
+}
+
+.tableDiv{
+    border: solid white 1px;
+    border-radius: 7px;
+}
+
+.closeBtn{
+    color: white;
+}
+
+.tbl-labels{
+    font-size: 18px;
+    color: white;
+}
+
+.links{
+    font-size: 15px;
+}
+
+.applyBtn{
+    background-color: #65000b;
+    width: 13%;
+    height: 2%;
+    border: solid white 2px;
+    border-radius: 7px;
+    margin-top: 3%;
+}
+
+.optionBtn{
+    background-color: #65000b;
+    width: 13%;
+    height: 2%;
+    border: solid white 2px;
+    border-radius: 7px;
+    margin-right: 2%;
+    margin-left: 16%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.jobDescContainer{
+    text-align: left;
+}
+
+.jobDescDiv{
+    text-align: left;
+    margin-top: 2%;
+}
+
+.contactInfoDiv{
+    text-align: left;
 }

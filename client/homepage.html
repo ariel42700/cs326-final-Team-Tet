@@ -7,78 +7,128 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href= "css/index.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type="module" src="js/mainPage.js" defer></script>
+        <script type="module" src="server.js" defer></script>
     </head>
-    <body>
+    <script>
+        
+    </script>
+    <body class="containerPage">
         <img src="images/logo.png" alt="UMass Logo" class="mt-3">
-        <div class="subheaddingx">Main Search</div>
+        <div class="subheaddingx" id="test">Main Search</div>
         <div class="mt-5 mb-5 px-3 py-3 mx-auto border border-dark">
             <div class="row border border-dark">
-              <div class="col mt-3 mb-3 px-5 py-2">
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Job Type
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id = "jobType">
-                      <a class="dropdown-item" href="#">Option 1</a>
-                      <a class="dropdown-item" href="#">Option 2</a>
-                      <a class="dropdown-item" href="#">Etc.</a>
+                <form class="row col-md-10 formDiv">
+                    <div class="form-group col-md-3  jobTypeDiv">
+                      <label for="jobTypes" class="labels">Job Type</label>
+                      <select class="form-control" id="jobTypes">
+                        <option>IT Work</option>
+                        <option>Sales</option>
+                        <option>Waiter/Waitress</option>
+                        <option>Driver</option>
+                      </select>
                     </div>
-                  </div>
-              </div>
-              <div class="col mt-3 mb-3 px-5 py-2 ">
-                <div class="form-check">
-                    <div>Work Study?</div>
-                    <div id = "workStudy">
-                        <div>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
+                    <div class="form-group col-md-3 workStudyDiv">
+                        <label class="labels">Work Study</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
                                 Yes
                             </label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                            No
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio"  id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                No
                             </label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-                            <label class="form-check-label" for="flexRadioDefault3">
-                            No Preference
-                            </label>
-                        </div>
-                    </div>
-                  </div>
-              </div>
-              <div class="col mt-3 mb-3 px-5 py-2">
-                <div class="form-check">
-                    <div>Location</div>
-                    <div id = "location">
-                        <div>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault11">
-                            <label class="form-check-label" for="flexRadioDefault11">
-                                On-Campus
-                            </label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault12" checked>
-                            <label class="form-check-label" for="flexRadioDefault12">
-                                Off-Campus
-                            </label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault13" checked>
-                            <label class="form-check-label" for="flexRadioDefault13">
+                          </div>
+                          <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" id="exampleRadios3" value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
                                 No Preference
                             </label>
+                          </div>
+                    </div>
+                    <div class="form-group col-md-3 locationDiv">
+                        <label class="labels">Location</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                On Campus
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Off Campus
+                            </label>
+                          </div>
+                          <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" id="exampleRadios3" value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                No Preference
+                            </label>
+                          </div>
+                    </div>
+                  </form>
+                  <button type="button" class="btn btn-primary searchBtn labels" data-toggle="modal" data-target="#exampleModal">
+                    Search
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content modalDiv col-md-12">
+                        <div class="modal-header">
+                          <h5 class="modal-title labels" id="exampleModalLabel">Resulting Jobs</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="closeBtn">&times;</span>
+                          </button>
                         </div>
+                        <div class="modal-body">
+                            <div class="mt-5 mb-5 px-3 py-3 mx-auto tableDiv">
+                                <h1>Jobs</h1>
+                                <div class="row">
+                                    <table class="table tbl-labels">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Job Title</th>
+                                            <th scope="col">Working Period</th>
+                                            <th scope="col">Hours Per Week</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody class="links" id=jobList>
+                                          <tr>
+                                            <th scope="row"><a href="">Link to Other Page</a></th>
+                                            <td>...</td>
+                                            <td>...</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><a href="">Link to Other Page</a></th>
+                                            <td>...</td>
+                                            <td>...</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><a href="">Link to Other Page</a></th>
+                                            <td>...</td>
+                                            <td>...</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary searchBtn" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-              </div>
-              <button class="btn btn-primary" type="submit" id = "search">Search</button>
             </div>
-        </div>
+    </div>
 
     </body>
 </html>
