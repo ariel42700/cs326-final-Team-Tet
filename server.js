@@ -8,6 +8,7 @@ const pgp = require('pg-promise');
 const router = express.Router();
 const secret = require('./secrets.json');
 
+
 //connecting to the database
 const {Pool} = require('pg');
 let URI = secret.URI;
@@ -38,13 +39,14 @@ async function select(){
         }
         else{
             let obj = res.rows;
+            //console.log(obj);
             return obj;
         }
     });
 }
 
 async function deleteR(){
-    pool.query(`delete from usertable where studentid = $1;`, [32007865], (err, res) => {
+    pool.query(`delete from usertable where studentid = $1;`, [5], (err, res) => {
         if (err) {
             console.log("Error - Failed to select all from Users");
             console.log(err);
@@ -54,6 +56,7 @@ async function deleteR(){
         }
     });
 }
+
 
 app.use('/', express.static('./client'));
 
@@ -76,15 +79,11 @@ app.get('/db', async (req, res) => {
       res.send("Error " + err);
     }*/
     //await insert();
-    await select();
-    await deleteR();
-    await select();
-})
+    //await deleteR();
+});
 
-app.post('/test', async (req, res) => {
-    await select();
-    //console.log(result);
-    res.send({"Working" : "Something"});
+app.get('/test', async (req, res) => {
+    console.log(await select());
 });
 
 app.listen(process.env.PORT || 5500, () => {
